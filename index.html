@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="css/layui.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/index_style.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" sizes="144x144" href="logo.png"/>
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="logo.png"/>
 </head>
 <body>
-test
+    <div class="section" id="section1">
+        <div class="fp-tablecell">
+            <div class="page1">
+                <div class="nav wow zoomIn" data-wow-duration="2s">
+                    <h1>Y先生</h1>
+                    <p>欢迎你来到我的个人空间</p>
+                    <span>将在5秒后自动跳转到我的博客页面（倒计时：<span id="num"></span>秒）</span><br>
+                    <a class="layui-btn layui-btn-normal" style="margin-top: 20px" href="http://60.205.189.188/blog">Enter Blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../static/layui/layui.js"></script>
+    <script src="../../static/js/wow.min.js"></script>
+    <script src="../../static/js/index.js"></script>
+    </body>
 <script>
-    window.location.href="http://60.205.189.188"
+    window.onload=function(){         //一进该页面就加载以下方法
+        setInterval(countDown, 1000);    //一般秒设置为参数为1000
+    }
+    let sec = 5;                  //设置倒计时时间为30秒
+    function countDown() {        //倒计时的方法
+        if(sec > 0) {
+            document.getElementById('num').innerHTML = sec--;
+        } else {
+            location = "http://60.205.189.188/blog";
+        }
+    }
+
 </script>
 </body>
 
